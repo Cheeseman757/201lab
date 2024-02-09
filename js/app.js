@@ -25,7 +25,7 @@ AppState.prototype.saveToLocalStorage = function () {
 }
 
 AppState.prototype.loadItems = function () {
-const productsJson = localStorage.getItem('allproducts');
+const productsJson = localStorage.getItem('allProducts');
   if (productsJson) {
     const productsArray = JSON.parse(productsJson);
 this.allProducts = productsArray.map(product => new Product(product.name, product.source.split('.').pop()));
@@ -39,9 +39,9 @@ this.allProducts = productsArray.map(product => new Product(product.name, produc
     JSON.stringify(localStorage.getItem('allProducts'));
   }
 
-  this.instantiateProducts();
+  //this.instantiateProducts();
 
-}
+
 
 
 function Product(name, fileExtension = 'jpg', timesClicked = 0 , timesShown = 0) {
